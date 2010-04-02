@@ -159,7 +159,7 @@ public class MemcachedClient extends SpyThread
 			throw new IllegalArgumentException(
 				"Operation timeout must be positive.");
 		}
-		tcService = new TranscodeService();
+		tcService = new TranscodeService(cf.isDaemon());
 		transcoder=cf.getDefaultTranscoder();
 		opFact=cf.getOperationFactory();
 		assert opFact != null : "Connection factory failed to make op factory";
